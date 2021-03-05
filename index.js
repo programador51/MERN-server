@@ -6,8 +6,7 @@ const cors = require('cors');
 /* Create server */
 const app = express();
 
-app.use(cors({ credentials: true, origin: true }));
-app.options("*", cors());
+app.use(cors());
 
 /* Conectar la BD */
 conection.conectionDB();
@@ -30,6 +29,6 @@ app.use('/api/tareas',require('./routes/tareas'));
 
 //////////////////////////////////////////
 
-app.listen(port,'0.0.0.0',()=>{
+appServer.listen(port,'0.0.0.0',()=>{
     console.log(`Server on port ${port}`);
 });
