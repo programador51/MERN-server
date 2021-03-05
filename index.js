@@ -18,7 +18,11 @@ app.use(express.json({extended:true}));
 /* Heroku waits this variable name on the deployment 
 Server and client cant have the same port
 */
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+    res.send('API de programador51');
+});
 
 // ROUTER-ROUTES-ENDPOINTS
 /* https://expressjs.com/en/starter/basic-routing.html */
@@ -29,6 +33,6 @@ app.use('/api/tareas',require('./routes/tareas'));
 
 //////////////////////////////////////////
 
-appServer.listen(port,'0.0.0.0',()=>{
+app.listen(port,'0.0.0.0',()=>{
     console.log(`Server on port ${port}`);
 });
