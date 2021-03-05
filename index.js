@@ -6,12 +6,7 @@ const cors = require('cors');
 /* Create server */
 const app = express();
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "domain"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-    next();
-  });
+app.use(cors());
 
 /* Conectar la BD */
 conection.conectionDB();
@@ -24,10 +19,6 @@ app.use(express.json({extended:true}));
 Server and client cant have the same port
 */
 const PORT = process.env.PORT || 4000;
-
-app.get('/', (req, res) => {
-    res.send('API de programador51');
-});
 
 // ROUTER-ROUTES-ENDPOINTS
 /* https://expressjs.com/en/starter/basic-routing.html */
