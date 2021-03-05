@@ -5,6 +5,9 @@ const {check} = require('express-validator');
 const authController = require('../controllers/authController');
 const auth = require('../middleware/auth');
 
+/* Habilitar CORS */
+app.use(cors());
+
 //Iniciar sesion
 //  api/auth
 router.post('/',

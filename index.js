@@ -3,11 +3,11 @@ const express = require('express');
 const conection = require('./config/db');
 const cors = require('cors');
 
-/* Habilitar CORS */
-app.use(cors());
-
 /* Create server */
 const app = express();
+
+/* Habilitar CORS */
+app.use(cors());
 
 /* Conectar la BD */
 conection.conectionDB();
