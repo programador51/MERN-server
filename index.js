@@ -6,11 +6,10 @@ const cors = require('cors');
 /* Create server */
 const app = express();
 
-app.use(cors());
-
 /* Conectar la BD */
 conection.conectionDB();
 
+app.use(cors());
 
 /* Habilitar JSON desde las peticiones front */
 app.use(express.json({extended:true}));
